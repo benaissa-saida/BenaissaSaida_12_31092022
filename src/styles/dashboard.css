@@ -1,0 +1,10 @@
+.Ss-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 117px auto;
+  grid-template-rows: 91px auto;
+  grid-template-areas:
+    "header header header header"
+    "aside main main main"
+    "aside main main main ";
+}

@@ -1,0 +1,24 @@
+.Ss-aside-container {
+  display: grid;
+  grid-template-rows: 3fr 2fr;
+  color: white;
+  background-color: #020203;
+  grid-area: aside;
+}
+
+.Ss-asideNav {
+  display: flex;
+  align-items: flex-end;
+}
+
+.ss-copyright-txt {
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+}
+
+.Ss-icon {
+  padding: 0.3rem;
+}

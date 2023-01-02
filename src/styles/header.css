@@ -1,0 +1,13 @@
+.Ss-header {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  color: white;
+  background-color: #020203;
+  grid-area: header;
+}
+
+.Ss-header-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
