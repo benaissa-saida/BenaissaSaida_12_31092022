@@ -1,0 +1,42 @@
+.Ss-profile-link {
+  text-decoration: none;
+  color: black;
+}
+
+.Ss-profile-link:active {
+  color: initial;
+}
+
+.Ss-profiles-container {
+  margin: 3rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  grid-area: main;
+}
+
+.Ss-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Ss-profile-container {
+  display: flex;
+}
+
+.Ss-host-name {
+  font-size: 2.8vw;
+  font-weight: 500;
+  display: inline;
+  width: min-content;
+  margin-right: 10px;
+}
+
+.Ss-profile-picture {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 10vw;
+  height: 10vw;
+}
