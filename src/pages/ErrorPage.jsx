@@ -1,7 +1,7 @@
+import Layout from "../components/Layout";
 import { useRouteError } from "react-router-dom";
 // import "../styles/error.css";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import { useEffect } from "react";
 
 function ErrorPage() {
@@ -10,8 +10,7 @@ function ErrorPage() {
     document.title = `SportSee | ${error.statusText}`;
   }, [error]);
   return (
-    <div className="ks-container-error">
-      <Header />
+    <Layout>
       <div id="ks-error-page">
         <h1 className="ks-status-error">{error.status}</h1>
         <h2 className="ks-message-error">Oups! {error.message}</h2>
@@ -21,7 +20,7 @@ function ErrorPage() {
           </Link>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
 
