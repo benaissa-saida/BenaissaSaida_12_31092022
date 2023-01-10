@@ -1,0 +1,28 @@
+#main {
+  padding: 4rem;
+  grid-area: main;
+}
+
+.Ss-main-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 9rem auto;
+}
+.Ss-user-infos {
+  font-weight: 500;
+}
+
+.Ss-user-first-name {
+  color: #ff0101;
+}
+
+.Ss-charts {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 18rem auto;
+  gap: 1.5rem;
+  grid-template-areas:
+    "activity activity activity keyData"
+    "averageSessions performance todayScore keyData";
+}
