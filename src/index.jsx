@@ -2,23 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import Home from "./pages/HomePage";
+import ErrorPage from "./pages/ErrorPage";
 import Dashboard from "./pages/Dashboard";
-// import ErrorPage from "./pages/ErrorPage";
-// import { useBackendApi } from "./services/api/useBackendApi";
-
-// function loader() {
-//   const { error } = useBackendApi("user/13");
-//   if (error) {
-//     throw new Response("Not Found", { status: 404 });
-//   }
-// }
 
 const router = createHashRouter([
   {
     path: "/",
+    element: <Home />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "user/:id",
     element: <Dashboard />,
-    // loader: loader,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
