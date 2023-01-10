@@ -4,15 +4,15 @@ const header = [
     title: "Accueil",
   },
   {
-    href: "/",
+    href: "/user/12",
     title: "Profil",
   },
   {
-    href: "/",
+    href: "#",
     title: "Réglage",
   },
   {
-    href: "/",
+    href: "#",
     title: "Communauté",
   },
 ];
