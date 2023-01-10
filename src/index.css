@@ -32,11 +32,6 @@ ul {
   height: 100%;
 }
 
-#main {
-  background-color: aqua;
-  grid-area: main;
-}
-
 a {
   text-decoration: none;
 }
