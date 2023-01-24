@@ -6,21 +6,34 @@ import KeyData from "./charts/KeyData";
 import AverageSessionsChart from "./charts/AverageSessions";
 import { useBackendApi } from "../services/api/useBackendApi";
 import "../styles/main.css";
-// import { useBackendApi } from "../services/api/useMockedBackendApi";
+import { useEffect, useState } from "react";
 
 function Main({ user }) {
   const endpoint = user;
-  const { data, isLoading, error } = useBackendApi(endpoint, "firstName");
-  if (error) {
-    throw new Response("Not Found", { status: 404 });
-  }
+  const { data, isLoading } = useBackendApi(endpoint, "userInfos");
+  const [todayScore, setTodayScore] = useState(0);
+  const [keyData, setKeyData] = useState({
+    calorieCount: 0,
+    carbohydrateCount: 0,
+    lipidCount: 0,
+    proteinCount: 0,
+  });
+  const [firstName, setFirstName] = useState("");
+
+  useEffect(() => {
+    if (!isLoading) {
+      setFirstName(data.userInfos.firstName);
+      setTodayScore(data.score || data.todayScore);
+      setKeyData(data.keyData);
+      document.title = `SportSee | ${firstName}`;
+    }
+  }, [data, isLoading, firstName]);
   return (
     <div id="main">
       <div className="Ss-main-container">
         <div className="Ss-user-infos">
           <h1>
-            Bonjour{" "}
-            <span className="Ss-user-first-name">{!isLoading && data}</span>
+            Bonjour <span className="Ss-user-first-name">{firstName}</span>
           </h1>
           <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </div>
@@ -28,8 +41,8 @@ function Main({ user }) {
           <ActivityChart user={user} />
           <AverageSessionsChart user={user} />
           <PerformanceChart user={user} />
-          <TodayScorechart user={user} />
-          <KeyData user={user} />
+          <TodayScorechart data={todayScore} />
+          <KeyData data={keyData} />
         </div>
       </div>
     </div>
