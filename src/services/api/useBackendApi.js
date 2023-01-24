@@ -21,13 +21,17 @@ export function useBackendApi(endpoint, service) {
 
         const response = await fetch(url);
 
-        if (!response.ok) {
-          throw new Error("Not Found");
-        }
+        // if (!response.ok) {
+        //   throw new Error("Not Found", {
+        //     status: response.status,
+        //     statusText: "User not found",
+        //   });
+        // }
         const data = await response.json();
         const consumeData = consumeDataByService(data, service);
 
         setData(consumeData);
+        setIsLoading(false);
       } catch (err) {
         setError(true);
       } finally {
@@ -49,32 +53,18 @@ export function useBackendApi(endpoint, service) {
 function consumeDataByService(data, service) {
   if (data) {
     switch (service) {
-      case "firstName":
-        return getUserFirstName(data.data);
       case "performance":
         return getUserPerformances(data.data);
       case "average-sessions":
         return getUserAverageSession(data.data);
       case "activity":
         return getUserActivity(data.data);
-      case "key-data":
-        return getUserKeyData(data.data);
-      case "today-score":
-        return getUserTodayScore(data.data);
       case "userInfos":
         return getUserInfos(data.data);
       default:
         throw new Error("No service was found");
     }
   }
-}
-
-/**
- * @param {Object} userData
- * @returns {string}
- */
-function getUserFirstName(userData) {
-  return userData.userInfos.firstName;
 }
 
 /**
@@ -148,24 +138,8 @@ function getUserActivity(userData) {
 
 /**
  * @param {Object} userData
- * @returns {Object}
- */
-function getUserKeyData(userData) {
-  return userData.keyData;
-}
-
-/**
- * @param {Object} userData
- * @returns {string}
- */
-function getUserTodayScore(userData) {
-  return userData.score || userData.todayScore;
-}
-
-/**
- * @param {Object} userData
  * @returns {object}
  */
 function getUserInfos(userData) {
-  return userData.userInfos;
+  return userData;
 }

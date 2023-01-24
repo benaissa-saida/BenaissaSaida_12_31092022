@@ -6,7 +6,7 @@ import {
   USER_AVERAGE_SESSIONS,
   USER_MAIN_DATA,
   USER_PERFORMANCE,
-} from "../../datas/api/mockedData";
+} from "../../datas/Api/mockedData";
 
 /**
  * Hook used to extract data from backendApi to feed the dashboard.
@@ -24,6 +24,7 @@ export function useBackendApi(userId, service) {
         const consumeData = consumeDataByService(userId, service);
 
         setData(consumeData);
+        setIsLoading(false);
       } catch (err) {
         setError(true);
       } finally {
@@ -45,18 +46,14 @@ export function useBackendApi(userId, service) {
 function consumeDataByService(userId, service) {
   if (userId) {
     switch (service) {
-      case "firstName":
-        return getUserFirstNameById(userId);
+      case "userInfos":
+        return getUserInfosById(userId);
       case "performance":
         return getUserPerformancesById(userId);
       case "average-sessions":
         return getUserAverageSessionById(userId);
       case "activity":
         return getUserActivityById(userId);
-      case "key-data":
-        return getUserKeyDataById(userId);
-      case "today-score":
-        return getUserTodayScoreById(userId);
       default:
         throw new Error("No service was found");
     }
@@ -67,10 +64,10 @@ function consumeDataByService(userId, service) {
  * @param {string} userId
  * @returns {string}
  */
-function getUserFirstNameById(userId) {
+function getUserInfosById(userId) {
   for (let user of USER_MAIN_DATA) {
     if (user.id === userId) {
-      return user.userInfos.firstName;
+      return user;
     }
   }
 }
@@ -152,30 +149,6 @@ function getUserActivityById(userId) {
         data[i].day = i + 1;
       }
       return data;
-    }
-  }
-}
-
-/**
- * @param {string} userId
- * @returns {Object}
- */
-function getUserKeyDataById(userId) {
-  for (let user of USER_MAIN_DATA) {
-    if (user.id === userId) {
-      return user.keyData;
-    }
-  }
-}
-
-/**
- * @param {string} userId
- * @returns {string}
- */
-function getUserTodayScoreById(userId) {
-  for (let user of USER_MAIN_DATA) {
-    if (user.id === userId) {
-      return user.score || user.todayScore;
     }
   }
 }
