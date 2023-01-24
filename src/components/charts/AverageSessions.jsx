@@ -14,17 +14,13 @@ import AverageSessionsTooltip from "./tooltips/AverageSessions";
 function AverageSessionsChart({ user }) {
   const endpoint = `${user}/average-sessions`;
   const { data } = useBackendApi(endpoint, "average-sessions");
-  console.log(data);
-  //   if (error) {
-  //     throw new Response("Not Found", { status: 404 });
-  //   }
   return (
     <div className="Ss-average-sessions">
       <h2 className="Ss-average-sessions-title">Durée moyenne des sessions</h2>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={data}
-          outerRadius="75%"
+          outerRadius={window.innerWidth > 1340 ? "70%" : "60%"}
           margin={{ top: 0, right: 12, bottom: 24, left: 12 }}
         >
           <XAxis

@@ -1,28 +1,42 @@
 import PropTypes from "prop-types";
-// import {
-//   BarChart,
-//   Bar,
-//   XAxis,
-//   YAxis,
-//   CartesianGrid,
-//   Tooltip,
-//   ResponsiveContainer,
-// } from "recharts";
-import { useBackendApi } from "../../services/api/useBackendApi";
+import calories from "../../assets/keydataIcon/calories-icon.svg";
+import carbs from "../../assets/keydataIcon/carbs-icon.svg";
+import fat from "../../assets/keydataIcon/fat-icon.svg";
+import protein from "../../assets/keydataIcon/protein-icon.svg";
 import "../../styles/keyData.css";
+import { numberFormater } from "../../utils/textFormatter";
+import Card from "./keyDataCard";
 
-function KeyData({ user }) {
-  const endpoint = user;
-  const { data } = useBackendApi(endpoint, "key-data");
+function KeyData({ data }) {
   console.log(data);
-  //   if (error) {
-  //     throw new Response("Not Found", { status: 404 });
-  //   }
-  return <div className="Ss-key-data">KeyData</div>;
+  const keyDataValues = [
+    {
+      type: "Calories",
+      src: calories,
+      quantity: `${numberFormater(data.calorieCount)}kCal`,
+    },
+    { type: "Protéines", src: protein, quantity: `${data.proteinCount}g` },
+    { type: "Glucides", src: carbs, quantity: `${data.carbohydrateCount}g` },
+    { type: "Lipides", src: fat, quantity: `${data.lipidCount}g` },
+  ];
+  return (
+    <div className="Ss-key-data">
+      {keyDataValues.map((entry, index) => {
+        return (
+          <Card
+            key={`cell-${index}`}
+            type={entry.type}
+            src={entry.src}
+            quantity={entry.quantity}
+          />
+        );
+      })}
+    </div>
+  );
 }
 
 KeyData.propTypes = {
-  user: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 export default KeyData;

@@ -33,12 +33,12 @@ function ActivityChart({ user }) {
           </div>
         </div>
       </div>
-      <ResponsiveContainer width="100%" height="90%">
+      <ResponsiveContainer width="100%" height="80%">
         <BarChart
           data={data}
+          margin={{ right: 48, bottom: 32, left: 48 }}
           barGap={8}
           barCategoryGap="35%"
-          margin={{ bottom: 25 }}
         >
           <CartesianGrid
             vertical={false}
@@ -68,7 +68,8 @@ function ActivityChart({ user }) {
             yAxisId="cal"
             dataKey="calories"
             type="number"
-            domain={[0, "dataMax + 10"]}
+            domain={["dataMin - 20", "dataMax + 10"]}
+            // domain={[0, "dataMax + 50"]}
             hide={true}
           />
           <Tooltip
