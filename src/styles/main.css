@@ -20,7 +20,7 @@
   height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 18rem auto;
+  grid-template-rows: 18rem 253px;
   gap: 1.5rem;
   grid-template-areas:
     "activity activity activity keyData"

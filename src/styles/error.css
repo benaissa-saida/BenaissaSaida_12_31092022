@@ -1,0 +1,40 @@
+.Ss-container-error {
+  height: 100%;
+  display: grid;
+}
+
+.Ss-status-error {
+  margin: 0;
+  font-size: 288px;
+  display: flex;
+  justify-content: center;
+}
+.Ss-message-error {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  font-weight: 500;
+  font-size: 36px;
+}
+
+.Ss-return {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Ss-return-link {
+  cursor: pointer;
+  font-size: 500;
+  font-size: 18px;
+  text-decoration: underline;
+  color: #ff0101;
+}
+
+#Ss-error-page {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  grid-area: main;
+}

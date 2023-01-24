@@ -1,6 +1,6 @@
 .Ss-aside-container {
   display: grid;
-  grid-template-rows: 3fr 2fr;
+  grid-template-rows: 1fr 250px;
   color: white;
   background-color: #020203;
   grid-area: aside;
@@ -11,7 +11,12 @@
   align-items: flex-end;
 }
 
+.Ss-asideNav-link {
+  width: max-content;
+  height: max-content;
+}
 .ss-copyright-txt {
+  font-size: 12px;
   display: flex;
   align-items: center;
   padding: 3rem 0;

@@ -1,4 +1,6 @@
 .Ss-performance {
-  background-color: pink;
+  width: 258px;
+  height: 263px;
+  background-color: #282d30;
   grid-area: performance;
 }

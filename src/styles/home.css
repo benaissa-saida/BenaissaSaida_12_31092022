@@ -8,7 +8,7 @@
 }
 
 .Ss-profiles-container {
-  margin: 3rem;
+  /* margin: 3rem; */
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
@@ -16,14 +16,11 @@
 }
 
 .Ss-profile {
+  padding-top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.Ss-profile-container {
-  display: flex;
 }
 
 .Ss-host-name {
