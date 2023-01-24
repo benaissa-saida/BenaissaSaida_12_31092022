@@ -10,7 +10,7 @@ function AsideNav() {
         <ul>
           {asideIcons.map((icon) => (
             <li key={icon.title}>
-              <NavLink to="/user/12">
+              <NavLink to="#" className="Ss-asideNav-link">
                 <Icon src={icon.src} alt={icon.title} />
               </NavLink>
             </li>
