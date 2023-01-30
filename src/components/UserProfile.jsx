@@ -11,7 +11,7 @@ function UserProfile({ endpoint, image }) {
     if (!isLoading) {
       setUserName(`${data.userInfos.firstName} ${data.userInfos.lastName}`);
     }
-  });
+  }, [data.userInfos.firstName, data.userInfos.lastName, isLoading]);
   return (
     <Link to={endpoint} title="userProfile" className="Ss-profile-link">
       {!isLoading && data && (
