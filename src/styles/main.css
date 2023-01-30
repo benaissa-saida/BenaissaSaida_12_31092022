@@ -5,8 +5,8 @@
 
 .Ss-main-container {
   height: 100%;
-  display: grid;
-  grid-template-rows: 9rem auto;
+  display: flex;
+  flex-direction: column;
 }
 .Ss-user-infos {
   font-weight: 500;
@@ -17,12 +17,35 @@
 }
 
 .Ss-charts {
-  height: 100%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.Ss-main-charts {
+  width: 75%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 18rem 253px;
-  gap: 1.5rem;
+  grid-template-rows: 1fr 16rem;
   grid-template-areas:
-    "activity activity activity keyData"
-    "averageSessions performance todayScore keyData";
+    "activity"
+    "performances";
+  grid-area: charts;
+}
+
+.Ss-performances-charts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "averageSessions performance todayScore";
+  gap: 1rem;
+  grid-area: performances;
+}
+
+@media (max-width: 1024px) {
+  #main {
+    padding: 2rem;
+  }
+  .Ss-main-charts {
+    width: 70%;
+    grid-template-rows: 17rem auto;
+  }
 }

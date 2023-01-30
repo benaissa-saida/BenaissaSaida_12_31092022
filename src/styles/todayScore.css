@@ -1,6 +1,9 @@
 .Ss-today-score {
-  width: 258px;
-  height: 263px;
+  /* max-width: 258px;
+  max-height: 263px; */
+
+  /* width: 258px;
+  height: 263px; */
   position: relative;
   display: flex;
   justify-content: center;
@@ -29,4 +32,15 @@
   color: rgba(0, 0, 0, 0.8);
   font-weight: 700;
   font-size: 26px;
+}
+
+@media (max-width: 1024px) {
+  .Ss-title {
+    top: 0.5rem;
+    left: 1rem;
+  }
+  .Ss-today-score {
+    max-width: 258px;
+    max-height: 263px;
+  }
 }

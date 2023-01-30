@@ -1,6 +1,15 @@
 .Ss-performance {
-  width: 258px;
-  height: 263px;
+  /* max-width: 258px;
+  max-height: 263px; */
+  /* width: 258px;
+  height: 263px; */
   background-color: #282d30;
   grid-area: performance;
+}
+
+@media (max-width: 1024px) {
+  .Ss-performance {
+    max-width: 258px;
+    max-height: 263px;
+  }
 }

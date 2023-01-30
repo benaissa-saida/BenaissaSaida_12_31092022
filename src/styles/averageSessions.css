@@ -1,13 +1,16 @@
 .Ss-average-sessions {
   position: relative;
-  width: 258px;
-  height: 263px;
+  /* max-width: 258px;
+  max-height: 263px; */
+  /* width: 258px;
+  height: 263px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: #ff0000;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   border-radius: 5px;
+  grid-column: 1/3;
   grid-area: averageSessions;
 }
 
@@ -34,4 +37,14 @@
   font-size: 10px;
   line-height: 24px;
   margin-top: 4px;
+}
+
+@media (max-width: 1024px) {
+  .Ss-average-sessions-title {
+    padding: 0px 34px 0 18px;
+  }
+  .Ss-average-sessions {
+    max-width: 258px;
+    max-height: 263px;
+  }
 }
