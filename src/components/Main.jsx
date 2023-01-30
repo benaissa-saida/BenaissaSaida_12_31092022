@@ -38,10 +38,14 @@ function Main({ user }) {
           <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </div>
         <div className="Ss-charts">
-          <ActivityChart user={user} />
-          <AverageSessionsChart user={user} />
-          <PerformanceChart user={user} />
-          <TodayScorechart data={todayScore} />
+          <div className="Ss-main-charts">
+            <ActivityChart user={user} />
+            <div className="Ss-performances-charts">
+              <AverageSessionsChart user={user} />
+              <PerformanceChart user={user} />
+              <TodayScorechart data={todayScore} />
+            </div>
+          </div>
           <KeyData data={keyData} />
         </div>
       </div>

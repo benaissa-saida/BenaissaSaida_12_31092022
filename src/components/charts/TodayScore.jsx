@@ -11,18 +11,18 @@ function TodayScorechart({ data }) {
     <div className="Ss-today-score">
       <h2 className="Ss-title">Score</h2>
       <ResponsiveContainer width="100%" height="100%">
-        <PieChart>
+        <PieChart width={160} height={160}>
           <Pie
             data={[{ name: "circle", value: 100 }]}
             dataKey="value"
-            outerRadius={70}
+            outerRadius={window.innerWidth > 1340 ? 70 : 60}
             fill="#fff"
           />
           <Pie
             data={score}
             dataKey="value"
-            innerRadius={70}
-            outerRadius={80}
+            innerRadius={window.innerWidth > 1340 ? 70 : 60}
+            outerRadius={window.innerWidth > 1340 ? 80 : 70}
             startAngle={90}
             endAngle={450}
             strokeOpacity={0}
