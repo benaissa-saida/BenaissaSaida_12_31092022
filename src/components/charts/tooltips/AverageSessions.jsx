@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function AverageSessionsTooltip({ active, payload }) {
   return (
     active &&
@@ -8,5 +10,10 @@ function AverageSessionsTooltip({ active, payload }) {
     )
   );
 }
+
+AverageSessionsTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
+};
 
 export default AverageSessionsTooltip;
