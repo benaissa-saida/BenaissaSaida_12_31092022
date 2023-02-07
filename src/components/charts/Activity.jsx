@@ -73,7 +73,6 @@ function ActivityChart({ user }) {
               dataKey="calories"
               type="number"
               domain={["dataMin - 20", "dataMax + 10"]}
-              // domain={[0, "dataMax + 50"]}
               hide={true}
             />
             <Tooltip
