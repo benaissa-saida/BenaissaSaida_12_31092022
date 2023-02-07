@@ -4,7 +4,7 @@ function Icon({ src, alt }) {
   return <img src={src} alt={alt} className="Ss-icon" />;
 }
 
-Icon.PropTypes = {
+Icon.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
 };
