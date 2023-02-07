@@ -32,7 +32,7 @@ function UserProfile({ endpoint, image }) {
   );
 }
 
-UserProfile.protoTypes = {
+UserProfile.PropTypes = {
   endpoint: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
 };
