@@ -21,12 +21,6 @@ export function useBackendApi(endpoint, service) {
 
         const response = await fetch(url);
 
-        // if (!response.ok) {
-        //   throw new Error("Not Found", {
-        //     status: response.status,
-        //     statusText: "User not found",
-        //   });
-        // }
         const data = await response.json();
         const consumeData = consumeDataByService(data, service);
 
@@ -65,6 +59,14 @@ function consumeDataByService(data, service) {
         throw new Error("No service was found");
     }
   }
+}
+
+/**
+ * @param {Object} userData
+ * @returns {object}
+ */
+function getUserInfos(userData) {
+  return userData;
 }
 
 /**
@@ -134,12 +136,4 @@ function getUserActivity(userData) {
     data[i].day = i + 1;
   }
   return data;
-}
-
-/**
- * @param {Object} userData
- * @returns {object}
- */
-function getUserInfos(userData) {
-  return userData;
 }

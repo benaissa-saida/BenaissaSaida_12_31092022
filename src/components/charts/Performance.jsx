@@ -39,7 +39,6 @@ function PerformanceChart({ user }) {
         <RadarChart
           data={activities}
           outerRadius={window.innerWidth > 1340 ? "70%" : "60%"}
-          // outerRadius="75%"
         >
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
