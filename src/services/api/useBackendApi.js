@@ -64,7 +64,7 @@ function consumeDataByService(data, service) {
 
 /**
  * @param {Object} userData
- * @returns {object}
+ * @returns {Object}
  */
 function getUserInfos(userData) {
   return userData;

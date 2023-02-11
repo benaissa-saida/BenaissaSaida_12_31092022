@@ -63,7 +63,7 @@ function consumeDataByService(userId, service) {
 
 /**
  * @param {string} userId
- * @returns {string}
+ * @returns {Object}
  */
 function getUserInfosById(userId) {
   for (let user of USER_MAIN_DATA) {
