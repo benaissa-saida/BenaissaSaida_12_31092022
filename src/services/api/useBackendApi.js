@@ -5,8 +5,9 @@ const baseUrl = process.env.REACT_APP_BASE_URL;
 
 /**
  * Hook used to extract data from backendApi to feed the dashboard.
- * @param {string} url
- * @returns {undefined|Object}
+ * @param {string} endpoint
+ * @param {string} service
+ * @returns {undefined|Object|array.Object}
  */
 export function useBackendApi(endpoint, service) {
   const [data, setData] = useState([]);
@@ -42,7 +43,7 @@ export function useBackendApi(endpoint, service) {
  * Uses specialized functions to consume the data of each service.
  * @param {Object} data
  * @param {string} service
- * @returns {undefined|string|number|Object|array.Object}
+ * @returns {Undefined|Object|array.Object}
  */
 function consumeDataByService(data, service) {
   if (data) {
