@@ -10,12 +10,13 @@ import {
 
 /**
  * Hook used to extract data from backendApi to feed the dashboard.
- * @param {string} url
- * @returns {undefined|Object}
+ * @param {string} userId
+ * @param {string} service
+ * @returns {undefined|Object|array.Object}
  */
 export function useBackendApi(userId, service) {
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
   useEffect(() => {
     if (!userId) return;
@@ -41,7 +42,7 @@ export function useBackendApi(userId, service) {
  * Uses specialized functions to consume the data of each service.
  * @param {string} userId
  * @param {string} service
- * @returns {undefined|string|number|Object|array.Object}
+ * @returns {Undefined|Object|array.Object}
  */
 function consumeDataByService(userId, service) {
   if (userId) {
