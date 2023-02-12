@@ -37,7 +37,10 @@ function ActivityChart({ user }) {
             </div>
           </div>
         </div>
-        <ResponsiveContainer width="100%" height="85%">
+        <ResponsiveContainer
+          width="100%"
+          height={window.innerWidth > 1340 ? "85%" : "80%"}
+        >
           <BarChart
             data={data}
             margin={{ right: 50, bottom: 32, left: 50 }}
