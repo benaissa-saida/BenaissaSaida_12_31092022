@@ -8,7 +8,6 @@ import { numberFormater } from "../../utils/textFormatter";
 import Card from "./keyDataCard";
 
 function KeyData({ data }) {
-  console.log(data);
   const keyDataValues = [
     {
       type: "Calories",
