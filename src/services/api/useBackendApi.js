@@ -15,7 +15,6 @@ export function useBackendApi(endpoint, service) {
   const [error, setError] = useState(false);
   useEffect(() => {
     if (!endpoint) return;
-    setIsLoading(true);
     async function fetchData() {
       try {
         const url = `${baseUrl}/${endpoint}`;
